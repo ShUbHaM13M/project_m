@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *::selection {
+    @apply text-white bg-black dark:text-black dark:bg-white;
+  }
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+  h1 {
+    @apply font-medium text-5xl text-secondary;
+  }
+  h2 {
+    @apply font-normal text-4xl text-secondary;
+  }
+  h3 {
+    @apply font-light text-3xl text-secondary;
+  }
+  p {
+    @apply font-light text-xl text-secondary;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    @apply rounded-xl border-2 bg-transparent border-secondary
+    placeholder:text-gray-400 placeholder:text-opacity-60 p-4
+    text-secondary outline-none cursor-pointer
+    focus:bg-secondary focus:text-primary focus:border-secondary
+    transition-colors duration-300 ease-out;
+  }
+  button,
+  input[type="button"] {
+    @apply rounded-xl outline-none p-4 hover:scale-95 focus:scale-95 transition-transform ease-out duration-300;
+  }
+  button:focus,
+  input[type="button"]:focus {
+    @apply outline-dashed outline-secondary;
+  }
+}
+
+@layer components {
+  button.primary,
+  input[type="button"].primary {
+    @apply text-secondary rounded-xl bg-accent p-4 w-full;
+  }
+
+  button.secondary,
+  input[type="button"].secondary {
+    @apply text-secondary border-secondary border p-4 w-full;
+  }
+
+  button.link,
+  input[type="button"].link {
+    @apply rounded-none text-accent p-0 self-end ml-auto w-fit 
+    focus:scale-100 hover:scale-100 transition-none focus:outline-none
+    relative after:absolute after:-bottom-1 after:left-0 after:border-dashed
+    focus:after:border focus:after:border-secondary focus:after:w-full;
+  }
+
+  .divider {
+    @apply bg-secondary bg-opacity-40 w-3/5;
+    height: 2px;
+    border-radius: 4px;
+  }
+  #root {
+    @apply min-h-screen;
+  }
+}
